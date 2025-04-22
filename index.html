@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TODO PARA TU AUTO - Accesorios y Autopartes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #000;
+      background-color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      animation: fade-in 1s ease forwards;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 100px;
+      width: auto;
+    }
+
+    h1 {
+      color: red;
+      font-size: 2.5rem;
+      margin-left: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ff0000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .carousel {
+      margin: 20px auto;
+      position: relative;
+      width: 100%;
+      max-width: 1050px;
+      height: 600px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .slide:hover img {
+      filter: brightness(1.2) drop-shadow(0 0 15px red);
+      transform: scale(1.02);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      background-color: rgba(0,0,0,0.3);
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+      padding: 5px 10px;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .dots {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .dot {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      margin: 0 4px;
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: red;
+    }
+
+    .content {
+      padding: 50px 20px;
+      text-align: center;
+      animation: fade-up 1s ease forwards;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 25px;
+      background-color: #111;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .boton:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00ff5e;
+      color: white;
+      font-size: 30px;
+      padding: 12px 16px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes fade-up {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 rgba(0,255,94,0.7); }
+      50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(0,255,94,0.9); }
+      100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,255,94,0.7); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo TODO PARA TU AUTO" class="logo" />
+      <h1>TODO PARA TU AUTO</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li><a href="accesorios.html">Cremalleras</a></li>
+        <li><a href="accesorios.html">Llantas</a></li>
+        <li><a href="accesorios.html">Amortiguadores</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CARRUSEL -->
+  <section id="inicio" class="carousel">
+    <button class="arrow prev">&#10094;</button>
+    <div class="carousel-container" id="carousel">
+      <div class="slide"><img src="faros.jpg" alt="Accesorio 1"></div>
+      <div class="slide"><img src="tsuruiii.jpg" alt="Accesorio 2"></div>
+      <div class="slide"><img src="roll bar.jpg" alt="Accesorio 3"></div>
+      <div class="slide"><img src="llanta.jpg" alt="Accesorio 4"></div>
+    </div>
+    <button class="arrow next">&#10095;</button>
+  </section>
+  <div class="dots" id="dots"></div>
+
+  <!-- CONTENIDO -->
+  <section id="productos" class="content">
+    <h2>Catálogo</h2>
+    <p>Puedes ver o descargar nuestro catálogo completo aquí:</p>
+    <a class="boton" href="catalogo.pdf" download>Descargar Catálogo</a>
+    <p>O visita nuestro <a href="https://www.whatsapp.com/catalog/5213223772157/?app_absent=0" target="_blank">catálogo en WhatsApp</a>.</p>
+  </section>
+
+  <section id="sobre-nosotros" class="content">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos una empresa especializada en accesorios y autopartes para todo tipo de vehículos. Calidad garantizada y atención personalizada en Puerto Vallarta.</p>
+  </section>
+
+  <section id="contacto" class="content">
+    <h2>Contáctanos</h2>
+    <p>📞 +52 322 377 2157</p>
+    <p>📧 todoparatuautopuertovallarta@gmail.com</p>
+    <p>📍 Luis Donaldo Colosio #726, Crucero Cruz Roja, Puerto Vallarta, Jalisco</p>
+  </section>
+
+  <a href="https://wa.me/5213223772157" class="whatsapp" target="_blank">💬</a>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const container = document.getElementById('carousel');
+    const dotsContainer = document.getElementById('dots');
+    let current = 0;
+    let interval;
+
+    // Crear puntos
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateCarousel() {
+      container.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[current].classList.add('active');
+    }
+
+    function goToSlide(index) {
+      current = index;
+      updateCarousel();
+      resetInterval();
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      nextSlide();
+      resetInterval();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      prevSlide();
+      resetInterval();
+    });
+
+    function startAutoSlide() {
+      interval = setInterval(nextSlide, 4000);
+    }
+
+    function resetInterval() {
+      clearInterval(interval);
+      startAutoSlide();
+    }
+
+    updateCarousel();
+    startAutoSlide();
+  </script>
+
+</body>
+</html>
