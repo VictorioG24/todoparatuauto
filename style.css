@@ -186,3 +186,54 @@
     100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,255,94,0.7); }
   }
   
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      padding: 10px 15px;
+      text-align: center;
+    }
+  
+    .logo-container {
+      flex-direction: column;
+    }
+  
+    .logo {
+      height: 70px;
+      margin-bottom: 10px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .carousel {
+      height: 250px;
+    }
+  
+    .slide img {
+      object-position: center;
+    }
+  
+    .content {
+      padding: 30px 15px;
+    }
+  
+    .boton {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+    }
+  
+    .whatsapp {
+      font-size: 24px;
+      padding: 10px 12px;
+    }
+  }
+  
