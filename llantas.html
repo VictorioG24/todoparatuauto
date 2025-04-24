@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Llantas Premium</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 2rem;
+      background-color: #fff;
+      gap: 2rem;
+    }
+
+    .intro img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .intro div {
+      flex: 1;
+    }
+
+    .features {
+      background: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .features h2 {
+      margin-bottom: 1rem;
+      color: #ffcc00;
+    }
+
+    .features ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .features li {
+      background: #333;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .products {
+      background-color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .products h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .product-card {
+      width: 280px;
+      background: #fafafa;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      margin: 1rem 0 0.5rem;
+      color: #0b3d91;
+    }
+
+    .product-card p {
+      padding: 0 1rem 1.5rem;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .product-card img {
+  width: 100%;           /* Se adapta al ancho del contenedor */
+  height: 300px;         /* Altura fija */
+  object-fit: cover;     /* Rellena sin deformarse */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Llantas Premium</h1>
+    <p>Rendimiento, durabilidad y agarre sin límites</p>
+  </header>
+
+  <section class="intro">
+    <img src="alren.jpg" alt="Llantas de alto rendimiento">
+    <div>
+      <h2>Calidad que rueda contigo</h2>
+      <p>
+        En nuestra tienda encontrarás llantas para todo tipo de vehículos: deportivos, urbanos, 4x4 y más. Diseñadas para ofrecerte seguridad, confort y un excelente desempeño en cualquier terreno.
+      </p>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Ventajas de nuestras llantas</h2>
+    <ul>
+      <li>Mayor tracción y agarre</li>
+      <li>Materiales de alto rendimiento</li>
+      <li>Mayor vida útil</li>
+      <li>Menor ruido en carretera</li>
+      <li>Resistencia al desgaste</li>
+    </ul>
+  </section>
+
+  <section class="products">
+    <h2>Modelos Disponibles</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="piso.png" alt="Llanta de Piso">
+        <h3>Llanta Deportiva</h3>
+        <p>Diseño agresivo para autos de alto rendimiento. Máximo agarre y velocidad.</p>
+      </div>
+      <div class="product-card">
+        <img src="allter.jpg" alt="Llanta todoterreno">
+        <h3>Llanta Todo Terreno</h3>
+        <p>Ideal para aventuras off-road. Resistente a impactos y cortes.</p>
+      </div>
+      <div class="product-card">
+        <img src="mudter.png" alt="Llanta Mud Terrain">
+        <h3>Llanta Urbana</h3>
+        <p>Eficiencia y confort para la ciudad. Excelente relación calidad-precio.</p>
+      </div>
+      <!-- Más modelos aquí -->
+      <!--
+      <div class="product-card">
+        <img src="otra-llanta.jpg" alt="Nombre del producto">
+        <h3>Nombre del producto</h3>
+        <p>Descripción breve del modelo.</p>
+      </div>
+      -->
+    </div>
+  </section>
+</body>
+</html>

@@ -35,20 +35,22 @@
     }
 
     .logo {
-      height: 100px;
+      height: 80px;
       width: auto;
     }
 
     h1 {
-      color: red;
-      font-size: 2.5rem;
+      color: rgb(0, 0, 0);
+      font-size: 2rem;
       margin-left: 20px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
@@ -141,7 +143,7 @@
     }
 
     .content {
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
       animation: fade-up 1s ease forwards;
     }
@@ -177,6 +179,20 @@
       animation: pulse 2s infinite;
     }
 
+    .titulo-promo {
+      font-size: 2.5rem;
+      color: #0213ff;
+      text-align: center;
+      margin-top: 30px;
+      animation: zoomIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes zoomIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
     @keyframes fade-up {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -192,6 +208,120 @@
       50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(0,255,94,0.9); }
       100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,255,94,0.7); }
     }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red; }
+      50% { text-shadow: 0 0 10px red, 0 0 20px red, 0 0 25px red; }
+    }
+
+    .promo-brillo {
+      color: rgb(255, 255, 255);
+      animation: glow 2s infinite;
+      text-align: center;
+      display: block;
+      margin: 0 auto; 
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 95%;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+      }
+
+      .logo {
+        height: 60px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        margin-left: 10px;
+      }
+
+      nav ul {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .carousel {
+        height: 300px;
+      }
+
+      .titulo-promo {
+        font-size: 1.8rem;
+      }
+
+      .promo-brillo {
+        font-size: 1.2rem;
+        padding: 8px;
+      }
+
+      .boton {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+    .titulo-promo {
+      font-size: 3rem;
+      color: #0213ff;
+      text-align: center;
+      margin-top: 40px;
+      animation: zoomIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fade-up {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 rgba(0,255,94,0.7); }
+      50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(0,255,94,0.9); }
+      100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,255,94,0.7); }
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+      }
+      50% {
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 25px red;
+      }
+      100% {
+        text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+      }
+    }
+
+    .promo-brillo {
+      color: rgb(255, 255, 255);
+      animation: glow 2s infinite;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -204,15 +334,14 @@
     <nav>
       <ul>
         <li><a href="accesorios.html">Accesorios</a></li>
-        <li><a href="accesorios.html">Cremalleras</a></li>
-        <li><a href="accesorios.html">Llantas</a></li>
-        <li><a href="accesorios.html">Amortiguadores</a></li>
+        <li><a href="cremalleras.html">Cremalleras</a></li>
+        <li><a href="llantas.html">Llantas</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- CARRUSEL -->
-   <h1>¡PRODUCTOS EN PROMO!</h1>
+  <h1 class="promo-brillo">¡PRODUCTOS EN PROMO!</h1>
+
   <section id="inicio" class="carousel">
     <button class="arrow prev">&#10094;</button>
     <div class="carousel-container" id="carousel">
@@ -225,7 +354,6 @@
   </section>
   <div class="dots" id="dots"></div>
 
-  <!-- CONTENIDO -->
   <section id="productos" class="content">
     <h2>Catálogo</h2>
     <p>Puedes ver o descargar nuestro catálogo completo aquí:</p>
@@ -235,79 +363,46 @@
 
   <section id="sobre-nosotros" class="content">
     <h2>Sobre Nosotros</h2>
-    <p>Somos una empresa especializada en accesorios y autopartes para todo tipo de vehículos. Calidad garantizada y atención personalizada en Puerto Vallarta.</p>
+    <p>En TODO PARA TU AUTO, trabajamos para ofrecerte las mejores autopartes y accesorios a precios competitivos. ¡Tu auto está en buenas manos con nosotros!</p>
   </section>
 
-  <section id="contacto" class="content">
-    <h2>Contáctanos</h2>
-    <p>📞 +52 322 377 2157</p>
-    <p>📧 todoparatuautopuertovallarta@gmail.com</p>
-    <p>📍 Luis Donaldo Colosio #726, Crucero Cruz Roja, Puerto Vallarta, Jalisco</p>
-  </section>
-
-  <a href="https://wa.me/5213223772157" class="whatsapp" target="_blank">💬</a>
+  <a href="https://wa.me/5233223772157" class="whatsapp" target="_blank">💬</a>
 
   <script>
+    const carousel = document.getElementById('carousel');
     const slides = document.querySelectorAll('.slide');
-    const container = document.getElementById('carousel');
     const dotsContainer = document.getElementById('dots');
-    let current = 0;
-    let interval;
+    let currentIndex = 0;
 
-    // Crear puntos
+    function showSlide(index) {
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    const dots = [];
     slides.forEach((_, index) => {
       const dot = document.createElement('span');
       dot.classList.add('dot');
-      dot.addEventListener('click', () => goToSlide(index));
+      dot.addEventListener('click', () => showSlide(index));
       dotsContainer.appendChild(dot);
+      dots.push(dot);
     });
 
-    const dots = document.querySelectorAll('.dot');
-
-    function updateCarousel() {
-      container.style.transform = `translateX(-${current * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[current].classList.add('active');
-    }
-
-    function goToSlide(index) {
-      current = index;
-      updateCarousel();
-      resetInterval();
-    }
-
     function nextSlide() {
-      current = (current + 1) % slides.length;
-      updateCarousel();
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
     }
 
     function prevSlide() {
-      current = (current - 1 + slides.length) % slides.length;
-      updateCarousel();
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
     }
 
-    document.querySelector('.next').addEventListener('click', () => {
-      nextSlide();
-      resetInterval();
-    });
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
 
-    document.querySelector('.prev').addEventListener('click', () => {
-      prevSlide();
-      resetInterval();
-    });
-
-    function startAutoSlide() {
-      interval = setInterval(nextSlide, 4000);
-    }
-
-    function resetInterval() {
-      clearInterval(interval);
-      startAutoSlide();
-    }
-
-    updateCarousel();
-    startAutoSlide();
+    showSlide(currentIndex);
   </script>
-
 </body>
 </html>
